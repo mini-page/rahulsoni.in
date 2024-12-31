@@ -1,0 +1,54 @@
+/*Home section*/
+.home {
+	height: 200vh;
+	background-image: url('../images/home-bg.webp');
+	background-size: cover;
+	padding: 20px;
+	-webkit-display: flex;
+	display: flex;
+	position: relative;
+}
+
+.home .container {
+	-webkit-display: flex;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.home h1 {
+	color: #ffffff;
+	/* font-size: 60px; */
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.home h1 span {
+	color: #ff0000;
+	;
+}
+
+
+/*Responsive*/
+
+/*if screen width is less than or equal to 991px then*/
+@media(max-width: 991px) {
+	.home {
+		background-position: center;
+	}
+}
+
+/*if screen width is less than or equal to 767px then*/
+@media(max-width: 767px) {
+	.home h1 {
+		font-size: 40px;
+	}
+}
+
+/*if screen width is less than or equal to 550px then*/
+@media(max-width: 550px) {
+	.home h1 {
+		font-size: 30px;
+	}
+}

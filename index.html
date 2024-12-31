@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>RahulSoni.in</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/animate.css">
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap');
+		@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+		@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			overflow-x: hidden;
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+			/* font-family: 'Oswald', sans-serif; */
+		}
+
+		/*Header*/
+
+		header .container {
+			-webkit-display: flex;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		header .nav {
+			position: fixed;
+			background-color: #c11325;
+			width: 280px;
+			top: 0;
+			right: 0;
+			height: 100%;
+			z-index: 99;
+			padding: 100px 0px 15px;
+			-webkit-transform: translateX(100%);
+			transform: translateX(100%);
+			-webkit-transition: transform .5s ease;
+			transition: transform .5s ease;
+		}
+
+		header .nav.open {
+			-webkit-transform: translateX(0);
+			transform: translateX(0);
+		}
+
+		header .nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0px;
+		}
+
+		header .nav ul li {
+			display: block;
+		}
+
+		header .nav ul li a {
+			text-decoration: none;
+			font-size: 30px;
+			font-weight: 400;
+			color: #ffffff;
+			display: block;
+			position: relative;
+			padding: 10px 30px;
+		}
+
+		header .nav ul li a.active::before {
+			content: '';
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			height: 100%;
+			width: 100%;
+			background-color: #000000;
+			opacity: .2;
+			-webkit-transition: width .5s ease;
+			transition: width .5s ease;
+			z-index: -1;
+		}
+
+		header .nav ul li a::before {
+			content: '';
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			height: 100%;
+			width: 0px;
+			background-color: #000000;
+			opacity: .2;
+			-webkit-transition: width .5s ease;
+			transition: width .5s ease;
+			z-index: -1;
+		}
+
+		header .nav ul li a:hover::before {
+			width: 100%;
+		}
+
+		header .ham-burger {
+			display: inline-block;
+			position: relative;
+			z-index: 100;
+		}
+
+		header .ham-burger span {
+			height: 3px;
+			margin-bottom: 8px;
+			display: block;
+			background-color: #ffffff;
+			width: 30px;
+			-webkit-transition: transform .5s ease;
+			transition: transform .5s ease;
+		}
+
+		header .ham-burger span:nth-child(1) {
+			transform-origin: left top;
+		}
+
+		header .ham-burger span:nth-child(2) {
+			transform-origin: left bottom;
+		}
+
+		header .ham-burger.active span:nth-child(1) {
+			-webkit-transform: rotate(45deg) translateY(-6px);
+			transform: rotate(45deg) translateY(-6px);
+		}
+
+		header .ham-burger.active span:nth-child(2) {
+			-webkit-transform: rotate(-45deg) translateY(6px);
+			transform: rotate(-45deg) translateY(6px)
+		}
+
+		.wow:first-child {
+			visibility: hidden;
+		}
+	</style>
+
+</head>
+
+<body class="bg-black">
+
+	<!-- Start Header -->
+	<header class="sticky top-0 left-0 z-50 bg-black rounded-bl-2xl rounded-br-2xl py-6 px-4">
+		<div class="container mx-auto flex justify-between items-center">
+			<div class="logo">
+				<a href="" class="text-white text-4xl font-bold">Rahul<span class="text-red-700">Soni.in</span></a>
+			</div>
+			<a href="javascript:void(0)" class="ham-burger">
+				<span class="block h-[3px] mb-2 bg-white w-[30px] transition-all duration-500"></span>
+				<span class="block h-[3px] mb-2 bg-white w-[30px] transition-all duration-500"></span>
+			</a>
+			<div
+				class="nav fixed top-0 right-0 bg-red-700 w-[280px] h-full z-99 p-[100px_0_15px] transform translate-x-full transition-transform duration-500 ease-in-out">
+				<ul class="list-none m-0 p-0">
+					<li><a href="#home" class="block text-white text-2xl font-normal py-[10px] px-[30px]">Home</a></li>
+					<li><a href="#about" class="block text-white text-2xl font-normal py-[10px] px-[30px]">About</a>
+					</li>
+					<li><a href="#winning"
+							class="block text-white text-2xl font-normal py-[10px] px-[30px]">Winnings</a>
+					</li>
+					<li><a href="#service"
+							class="block text-white text-2xl font-normal py-[10px] px-[30px]">Services</a>
+					</li>
+
+					<!-- <li><a href="#schedule"
+							class="block text-white text-2xl font-normal py-[10px] px-[30px]">Schedule</a>
+					</li> -->
+					<li><a href="#price" class="block text-white text-2xl font-normal py-[10px] px-[30px]">Price</a>
+					</li>
+					<li><a href="#contact" class="block text-white text-2xl font-normal py-[10px] px-[30px]">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<!-- End Header -->
+
+
+	<!-- Start Home -->
+	<section class="home h-[150vh] bg-cover bg-[url('images/home-bg.webp')] p-5 flex relative rounded-2xl" id="home">
+		<div class="relative">
+			<h1>
+				<a href="https://www.instagram.com/rahulsoni.in/" target="_blank"
+					class="absolute flex items-center text-2xl">
+					<i class="fab fa-instagram text-center justify-center bg-pink-500 p-3 rounded-full "></i>
+					@rahulsoni.in
+				</a>
+			</h1>
+		</div>
+
+		<div class="container flex flex-col justify-center h-full">
+			<h1 class="text-white text-5xl font-extrabold uppercase wow slideInLeft" data-wow-delay="1s">
+				it doesn't get <span class="text-[#c11325]">easier</span>.
+			</h1>
+			<h1 class="text-white text-5xl font-extrabold uppercase wow slideInRight" data-wow-delay="1s">
+				but <span class="text-[#c11325]">you get</span> better you
+			</h1>
+		</div>
+		<!-- go down -->
+		<a href="#about" class="absolute block rounded-full text-center left-1/2 bottom-12 transform -translate-x-1/2">
+			<i class="fa fa-angle-down text-white animate-bounce"></i>
+		</a>
+		<!-- go down -->
+	</section>
+	<!-- End Home -->
+
+	<!-- about section -->
+	<section id="about" class="bg-black text-white pt-40 pb-10 px-6 text-center">
+		<!-- Limited Time Offer -->
+		<div class="mb-16">
+			<h2 class="text-4xl font-bold mb-8">Limited Time Offer!</h2>
+			<p class="text-lg mb-6">Call for a free consultation before the offer ends!</p>
+			<div class="text-2xl font-semibold mb-20">
+				Countdown: <span id="countdown" class="text-red-600">3 Days <i
+						class="fas fa-spinner fa-spin animate-rotate text-red-500"></i></span>
+			</div>
+			<a href="tel:+91 9876543210"
+				class="pr-2 pl-6 py-4 bg-red-700 text-white border border-transparent hover:border-white hover:text-white hover:bg-transparent transition-all duration-500 rounded-full transform mt-6">
+				Click to <i class="fas fa-phone text-green-600 bg-white rounded-full p-3 ml-2"></i>
+			</a>
+		</div>
+	</section>
+	<!-- end about -->
+
+	<!-- Winning Section -->
+	<section id="winning" class="bg-cover bg-center text-white rounded-2xl mb-2 py-40 px-6"
+		style="background-image: url('images/winner-bg.jpg');">
+		<h2 class="text-3xl font-bold text-center mb-10">Winnings</h2>
+		<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+			<div class="bg-black bg-opacity-30 border border-white p-6 rounded-lg text-center">
+				<h3 class="text-6xl font-bold pb-4">15</h3>
+				<p class="border-t-2 pt-6">Years of Experience</p>
+			</div>
+			<div class="bg-black bg-opacity-30 border border-white p-6 rounded-lg text-center">
+				<h3 class="text-6xl font-bold pb-4">3</h3>
+				<p class="border-t-2 pt-6">Medals in Competitions</p>
+			</div>
+			<div class="bg-black bg-opacity-30 border border-white p-6 rounded-lg text-center">
+				<h3 class="text-6xl font-bold pb-4">4</h3>
+				<p class="border-t-2 pt-6">Time Winner in Fitness Challenges</p>
+			</div>
+			<div class="bg-black bg-opacity-30 border border-white p-6 rounded-lg text-center">
+				<h3 class="text-6xl font-bold pb-4">3</h3>
+				<p class="border-t-2 pt-6">Trophies in Bodybuilding</p>
+			</div>
+		</div>
+	</section>
+	<!-- End Winning -->
+
+
+	<!-- Services Section -->
+	<section id="service" class="pt-20 bg-red-600 text-white rounded-2xl">
+		<div class="container mx-auto py-20 px-6">
+			<!-- Main Heading -->
+			<h2 class="text-4xl md:text-6xl font-extrabold text-center leading-tight tracking-wide">
+				Our <span class="text-black">Services</span>
+			</h2>
+			<p class="title-p text-lg text-center mt-4 font-medium">
+				We offer a variety of services to help you achieve your fitness goals. Whether you're looking to build
+				strength, improve flexibility, or join a community of like-minded individuals, we are here to guide you
+				every step of the way.
+			</p>
+			<p class="text-lg text-center mt-4 opacity-80">
+				From personalized training to relaxing therapies, our offerings are designed with your well-being in
+				mind.
+				Let us help you unlock your full potential.
+			</p>
+
+			<!-- Start Now Button -->
+			<a href="#about"
+				class="btn w-2/3 md:w-1/4 py-3 text-center shadow-2xl bg-black text-white border border-transparent hover:border-white hover:text-white hover:bg-transparent transition-all duration-500 rounded-full transform mt-8 block mx-auto font-bold text-lg tracking-wider">
+				Join Today
+			</a>
+
+			<!-- Services Grid -->
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+
+				<!-- Personal Training Card -->
+				<div class="relative card box wow bounceInUp" data-wow-delay="0.2s">
+					<img src="images/personal-training.jpg" alt="Personal Training"
+						class="rounded-xl w-full h-64 object-cover">
+					<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-xl"></div>
+					<h3 class="absolute bottom-16 left-4 text-white font-semibold text-xl z-10">Personal Training</h3>
+					<p class="absolute bottom-5 left-4 text-white text-sm z-10">Get customized workout plans from
+						professional trainers.</p>
+				</div>
+
+				<!-- Cardio Training Card -->
+				<div class="relative fade-in card box wow bounceInUp" data-wow-delay="0.4s">
+					<img src="images/cardio-training.jpg" alt="Cardio Training"
+						class="rounded-xl w-full h-64 object-cover">
+					<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-xl"></div>
+					<h3 class="absolute bottom-16 left-4 text-white font-semibold text-xl z-10">Cardio Training</h3>
+					<p class="absolute bottom-5 left-4 text-white text-sm z-10">Boost your heart health with our
+						state-of-the-art equipment.</p>
+				</div>
+
+				<!-- Yoga & Pilates Card -->
+				<div class="relative fade-in card box wow bounceInUp" data-wow-delay="0.6s">
+					<img src="images/yoga-pilates.jpg" alt="Yoga & Pilates" class="rounded-xl w-full h-64 object-cover">
+					<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-xl"></div>
+					<h3 class="absolute bottom-16 left-4 text-white font-semibold text-xl z-10">Yoga & Pilates</h3>
+					<p class="absolute bottom-5 left-4 text-white text-sm z-10">Find balance and flexibility with our
+						guided
+						sessions.</p>
+				</div>
+
+				<!-- Muscle Building Card -->
+				<div class="relative fade-in card box wow bounceInUp" data-wow-delay="0.8s">
+					<img src="images/muscle-building.jpg" alt="Muscle Building"
+						class="rounded-xl w-full h-64 object-cover">
+					<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-xl"></div>
+					<h3 class="absolute bottom-16 left-4 text-white font-semibold text-xl z-10">Muscle Building</h3>
+					<p class="absolute bottom-5 left-4 text-white text-sm z-10">Build muscles as fast as you can. Train
+						under us!</p>
+				</div>
+
+				<!-- Relaxation Therapy Card -->
+				<div class="relative fade-in card box wow bounceInUp" data-wow-delay="1s">
+					<img src="images/relaxation-therapy.jpg" alt="Relaxation Therapy"
+						class="rounded-xl w-full h-64 object-cover">
+					<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-xl"></div>
+					<h3 class="absolute bottom-16 left-4 text-white font-semibold text-xl z-10">Relaxation Therapy</h3>
+					<p class="absolute bottom-5 left-4 text-white text-sm z-10">Unwind with our specialized recovery
+						therapies.</p>
+				</div>
+
+				<!-- Strength Training Card -->
+				<div class="relative fade-in card box wow bounceInUp" data-wow-delay="1.2s">
+					<img src="images/strength-training.jpg" alt="Strength Training"
+						class="rounded-xl w-full h-64 object-cover">
+					<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-xl"></div>
+					<h3 class="absolute bottom-16 left-4 text-white font-semibold text-xl z-10">Strength Training</h3>
+					<p class="absolute bottom-5 left-4 text-white text-sm z-10">Build muscle with our advanced
+						strength-training machines.</p>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End Services -->
+
+	<!-- Start Today -->
+	<section id="home" class="bg-black text-white lg:py-20 pt-40 pb-0 md:pb-4 lg:pb-0 px-4">
+		<div class="container mx-auto flex flex-col md:pb-10 md:flex-row items-center">
+			<div class="w-full md:w-1/2 text-center px-6 md:text-left">
+				<h1 class="text-4xl lg:text-6xl font-bold">Start Your <span class="text-red-600">Transformation</span>
+					Today
+				</h1>
+
+				<p class="mt-4 text-xl lg:text-2xl tracking-wider">Embark on a journey of self-improvement with our
+					<span class="font-bold text-red-500">training
+						programs</span>.
+					Whether you're looking to enhance your fitness, develop new skills, or push your limits, we are
+					here
+					to help you achieve your goals. Our expert instructors and tailored sessions are designed to
+					meet
+					your unique needs and bring out the best in you.
+				</p>
+				<a href="#home"
+					class="inline-block btn py-3 px-10 bg-red-700 text-white border border-transparent hover:border-white hover:text-white hover:bg-transparent transition-all duration-500 rounded-full shadow-lg hover:shadow-2xl transform mt-6">
+					Start Now <i class="animate-ping fas fa-plus ml-2 text-white"></i></a>
+			</div>
+			<img src="images/body-truck-removebg-preview.png" alt="background images"
+				class="element -mt-80 md:-mt-0 z-100 w-full">
+		</div>
+	</section>
+	<!-- End Start Today -->
+
+	<!-- Testimonials -->
+	<section class="bg-black pb-8 px-8">
+		<div class="bg-white text-black py-16 px-6 rounded-2xl shadow-lg">
+			<h2 class="text-3xl font-bold text-center mb-8">What My Clients Say</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div class="bg-red-600 text-white p-6 rounded-lg shadow-lg">
+					<p>"I never thought I could achieve this Perfect physic!"</p>
+					<p class="mt-4 font-semibold">- Trang Gupta.</p>
+				</div>
+				<div class="bg-red-600 text-white p-6 rounded-lg shadow-lg">
+					<p>"The best trainer I've ever had!"</p>
+					<p class="mt-4 font-semibold">- Raghav S.</p>
+				</div>
+				<div class="bg-red-600 text-white p-6 rounded-lg shadow-lg">
+					<p>"Highly recommend for anyone serious about fitness!"</p>
+					<p class="mt-4 font-semibold">- RajKumar Pandey</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- testimonial -->
+
+
+	<!-- Start Price -->
+	<section class="price-package py-20 bg-white rounded-2xl mb-2" id="price">
+		<div class="container mx-auto p-6 md:p-2 text-center">
+			<h2 class="text-4xl font-bold pb-5">Choose Your Perfect Plan</h2>
+			<p class="title-p text-lg px-4 mb-12">
+				Whether you're just starting out or ready to take your training to the next level, we have a package for
+				you. <br>
+				Explore our flexible membership options designed to fit your goals and lifestyle.
+			</p>
+			<div class="content grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+				<!-- Package 1 - Basic Plan -->
+				<div
+					class="box p-1 flex flex-col bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 ease-in-out hover:scale-105">
+					<!-- Price Tag -->
+					<div class="price-tag py-4 text-xl bg-red-600 text-white rounded-tl-xl rounded-tr-xl font-bold">
+						₹449/Month
+					</div>
+					<!-- Image -->
+					<div class="img">
+						<img src="images/price-ham.jpg" alt="price"
+							class="w-full h-[200px] object-cover rounded-b-xl" />
+					</div>
+					<!-- Text Content -->
+					<div class="text py-8 px-6 flex-grow text-center">
+						<h3 class="text-2xl text-gray-800 font-semibold mb-4">Basic Training Plan</h3>
+						<div class="text-sm text-gray-800 mb-4 space-y-2">
+							<div class="flex items-center justify-center">
+								<span class="mr-2 text-red-600"><i class="fas fa-wifi"></i></span> Free Wi-Fi
+							</div>
+							<div class="flex items-center justify-center">
+								<span class="mr-2 text-red-600"><i class="fas fa-calendar-check"></i></span>
+								Month-to-Month
+							</div>
+							<div class="flex items-center justify-center">
+								<span class="mr-2 text-red-600"><i class="fas fa-clock"></i></span> No Time Restrictions
+							</div>
+						</div>
+						<a href="#"
+							class="btn py-2 px-8 bg-red-600 text-white border border-transparent hover:border-gray-800 hover:text-gray-800 hover:bg-transparent transition-all duration-500 mt-6 rounded-full">
+							Join Now
+						</a>
+					</div>
+				</div>
+
+				<!-- Package 2 - Popular Plan with Border -->
+				<div
+					class="box p-1 flex flex-col justify-between bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 ease-in-out hover:scale-105">
+					<!-- Price Tag -->
+					<div class="price-tag py-4 text-xl bg-red-600 text-white rounded-tl-xl rounded-tr-xl font-bold">
+						₹949/Month
+					</div>
+					<!-- Image -->
+					<div class="img">
+						<img src="images/price-belt.jpg" alt="price"
+							class="w-full h-[200px] object-cover rounded-b-xl" />
+					</div>
+					<!-- Text Content -->
+					<div class="text py-8 px-6 flex-grow text-center">
+						<h3 class="text-2xl text-gray-800 font-semibold mb-4">Popular Body Building Plan</h3>
+						<div class="text-sm text-gray-800 mb-4 space-y-2">
+							<div class="flex items-center justify-center">
+								<span class="mr-2 text-red-600"><i class="fas fa-check-circle"></i></span> All basic
+								Features
+							</div>
+							<div class="flex items-center justify-center">
+								<span class="mr-2 text-red-600"><i class="fas fa-dumbbell"></i></span> Gym & Cardio
+								Access
+							</div>
+							<div class="flex items-center justify-center">
+								<span class="mr-2 text-red-600"><i class="fas fa-lock"></i></span> Locker Rooms
+							</div>
+						</div>
+						<a href="#"
+							class="btn py-2 px-8 bg-red-600 text-white border border-transparent hover:border-gray-800 hover:text-gray-800 hover:bg-transparent transition-all duration-500 mt-4 rounded-full">
+							Join Now
+						</a>
+					</div>
+				</div>
+
+				<!-- Package 3 - Premium Plan -->
+				<div
+					class="box p-1 flex flex-col justify-between bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 border-b-4g border-red-500 ease-in-out hover:scale-105">
+					<!-- Price Tag -->
+					<div class="price-tag py-4 text-xl bg-red-600 text-white rounded-tl-xl rounded-tr-xl font-bold">
+						₹1449/Month
+					</div>
+					<!-- Image -->
+					<div class="img">
+						<img src="images/price-up.jpg" alt="price" class="w-full h-[200px] object-cover rounded-b-xl" />
+					</div>
+					<!-- Text Content -->
+					<div class="text py-8 px-6 flex-grow text-center">
+						<h3 class="text-2xl font-semibold mb-4">Premium Body Building Plan</h3>
+						<div class="text-sm text-gray-800 mb-4 space-y-2">
+							<div class="flex items-center justify-center">
+								<span class="mr-2 text-red-600"><i class="fas fa-plus"></i></span> All Premium Features
+							</div>
+							<div class="flex items-center justify-center">
+								<span class="mr-2 text-red-600"><i class="fas fa-trophy"></i></span> Personal Trainer
+							</div>
+							<div class="flex items-center justify-center">
+								<span class="mr-2 text-red-600"><i class="fas fa-heart"></i></span> Nutrition Plan
+							</div>
+							<div class="flex items-center justify-center">
+								<span class="mr-2 text-red-600"><i class="fas fa-gym"></i></span> VIP Gym Access
+							</div>
+						</div>
+						<a href="#"
+							class="btn py-2 px-8 bg-red-600 text-white border border-transparent hover:border-gray-800 hover:text-gray-800 hover:bg-transparent transition-all duration-500 mt-4 rounded-full">
+							Join Now
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- End Price -->
+
+
+	<!-- Footer -->
+	<footer id="contact" class="bg-gray-800 text-gray-100 pt-20 py-8 rounded-tl-2xl rounded-tr-2xl">
+		<div class="max-w-6xl mx-auto px-6">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div class="p-4">
+					<h3 class="text-2xl font-bold font-serif mb-1">Created By</h3>
+					<p class="text-sm">Umang Gupta with ❤️</p>
+				</div>
+				<div class="bg-blue-200 text-blue-900 rounded-2xl p-4">
+					<h3 class="text-xl font-bold mb-4">
+						<i class="fas fa-link"></i>
+						Quick Links
+					</h3>
+					<ul class="space-y-4">
+						<li><a href="#"
+								class="block transition-all hover:text-white hover:underline hover:bg-blue-700 hover:rounded-full hover:px-10 hover:py-2">
+								About Us
+							</a></li>
+						<li><a href="#"
+								class="block transition-all hover:text-white hover:underline hover:bg-blue-700 hover:rounded-full hover:px-10 hover:py-2">
+								Our Services
+							</a></li>
+						<li><a href="#"
+								class="block transition-all hover:text-white hover:underline hover:bg-blue-700 hover:rounded-full hover:px-10 hover:py-2">
+								Contact
+							</a></li>
+					</ul>
+				</div>
+				<div class="bg-white text-gray-900 rounded-2xl p-4">
+					<h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+					<ul class="space-y-4">
+						<li>
+							<a href="#"
+								class="block transition-all hover:text-white hover:bg-pink-500 hover:rounded-full hover:px-10 hover:py-3">
+								<i class="fab fa-instagram mr-3"></i>
+								Instagram</a>
+						</li>
+						<li>
+							<a href="#"
+								class="block transition-all hover:text-white hover:bg-red-700 hover:rounded-full hover:px-10 hover:py-3">
+								<i class="fab fa-youtube mr-3"></i>
+								Youtube</a>
+						</li>
+						<li>
+							<a href="#"
+								class="block transition-all hover:text-white hover:bg-blue-700 hover:rounded-full hover:px-10 hover:py-3">
+								<i class="fab fa-facebook-f mr-3"></i>
+								Facebook</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="border-t border-gray-600 mt-8 pt-6 text-center">
+				<p>© @Rahulsoni.in<br> All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+	<!-- end footer-->
+
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			$(".ham-burger, .nav ul li a").click(function () {
+
+				$(".nav").toggleClass("open")
+
+				$(".ham-burger").toggleClass("active");
+			})
+			$(".accordian-container").click(function () {
+				$(".accordian-container").children(".body").slideUp();
+				$(".accordian-container").removeClass("active")
+				$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+				$(this).children(".body").slideDown();
+				$(this).addClass("active")
+				$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+			})
+
+			$(".nav ul li a, .go-down").click(function (event) {
+				if (this.hash !== "") {
+
+					event.preventDefault();
+
+					var hash = this.hash;
+
+					$('html,body').animate({
+						scrollTop: $(hash).offset().top
+					}, 800, function () {
+						window.location.hash = hash;
+					});
+
+					// add active class in navigation
+					$(".nav ul li a").removeClass("active")
+					$(this).addClass("active")
+				}
+			})
+		})
+
+		wow = new WOW(
+			{
+				animateClass: 'animated',
+				offset: 0,
+			}
+		);
+		wow.init();
+
+		const accordions = document.querySelectorAll('.accordion-container');
+
+		accordions.forEach(accordion => {
+			accordion.querySelector('.head').addEventListener('click', () => {
+				const body = accordion.querySelector('.body');
+				const icon = accordion.querySelector('.fa');
+				body.classList.toggle('hidden');
+				icon.classList.toggle('fa-angle-down');
+				icon.classList.toggle('fa-angle-up');
+			});
+		});
+
+		// Get all the details elements
+		const detailsElements = document.querySelectorAll('details');
+
+		// Add event listener to each details element
+		detailsElements.forEach(details => {
+			details.addEventListener('click', function () {
+				// Close all other details elements except the one clicked
+				detailsElements.forEach(otherDetails => {
+					if (otherDetails !== details) {
+						otherDetails.removeAttribute('open');
+						icon.classList.toggle('fa-angle-down');
+						icon.classList.toggle('fa-angle-up');
+					}
+				});
+			});
+		});
+
+		// Optionally, you can use this if you want the first section to always open by default:
+		document.getElementById('acc1').setAttribute('open', true);
+
+	</script>
+</body>
+
+</html>
