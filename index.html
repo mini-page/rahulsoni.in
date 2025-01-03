@@ -229,7 +229,7 @@
 				Countdown: <span id="countdown" class="text-red-600">3 Days <i
 						class="fas fa-spinner fa-spin animate-rotate text-red-500"></i></span>
 			</div>
-			<a href="tel:+91 9876543210"
+			<a href="tel:+91 8299360137"
 				class="pr-2 pl-6 py-4 bg-red-700 text-white border border-transparent hover:border-white hover:text-white hover:bg-transparent transition-all duration-500 rounded-full transform mt-6">
 				Click to <i class="fas fa-phone text-green-600 bg-white rounded-full p-3 ml-2"></i>
 			</a>
@@ -243,22 +243,31 @@
 		<h2 class="text-3xl font-bold text-center mb-10">Winnings</h2>
 		<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
 			<div class="bg-black bg-opacity-30 border border-white p-6 rounded-lg text-center">
-				<h3 class="text-6xl font-bold pb-4">15</h3>
-				<p class="border-t-2 pt-6">Years of Experience</p>
+				<h3 class="text-6xl font-bold pb-4">
+					5 <i class="fas fa-calendar-alt text-4xl"></i>
+				</h3>
+				<p class="border-t-2 pt-6">Years of Experience in Professional Body-Building</p>
 			</div>
 			<div class="bg-black bg-opacity-30 border border-white p-6 rounded-lg text-center">
-				<h3 class="text-6xl font-bold pb-4">3</h3>
-				<p class="border-t-2 pt-6">Medals in Competitions</p>
+				<h3 class="text-6xl font-bold pb-4">
+					2 <i class="fas fa-medal text-4xl"></i>
+				</h3>
+				<p class="border-t-2 pt-6">2 times Mr. Lucknow</p>
 			</div>
 			<div class="bg-black bg-opacity-30 border border-white p-6 rounded-lg text-center">
-				<h3 class="text-6xl font-bold pb-4">4</h3>
-				<p class="border-t-2 pt-6">Time Winner in Fitness Challenges</p>
+				<h3 class="text-6xl font-bold pb-4">
+					3 <i class="fas fa-star text-4xl"></i>
+				</h3>
+				<p class="border-t-2 pt-6">Top 3 Winners in Fitness expo (S2 2021)</p>
 			</div>
 			<div class="bg-black bg-opacity-30 border border-white p-6 rounded-lg text-center">
-				<h3 class="text-6xl font-bold pb-4">3</h3>
-				<p class="border-t-2 pt-6">Trophies in Bodybuilding</p>
+				<h3 class="text-6xl font-bold pb-4">
+					<span class="text-2xl">Top </span>1st <i class="fas fa-crown text-4xl"></i>
+				</h3>
+				<p class="border-t-2 pt-6">Mr. Universe /Mr. Delhi <br>(Gold 2022)</p>
 			</div>
 		</div>
+
 	</section>
 	<!-- End Winning -->
 
@@ -444,7 +453,8 @@
 							</div>
 						</div>
 						<a href="#"
-							class="btn py-2 px-8 bg-red-600 text-white border border-transparent hover:border-gray-800 hover:text-gray-800 hover:bg-transparent transition-all duration-500 mt-6 rounded-full">
+							class="btn py-2 px-8 bg-red-600 text-white border border-transparent hover:border-gray-800 hover:text-gray-800 hover:bg-transparent transition-all duration-500 mt-6 rounded-full"
+							onclick="showPaymentPopup('449')">
 							Join Now
 						</a>
 					</div>
@@ -479,7 +489,8 @@
 							</div>
 						</div>
 						<a href="#"
-							class="btn py-2 px-8 bg-red-600 text-white border border-transparent hover:border-gray-800 hover:text-gray-800 hover:bg-transparent transition-all duration-500 mt-4 rounded-full">
+							class="btn py-2 px-8 bg-red-600 text-white border border-transparent hover:border-gray-800 hover:text-gray-800 hover:bg-transparent transition-all duration-500 mt-4 rounded-full"
+							onclick="showPaymentPopup('949')">
 							Join Now
 						</a>
 					</div>
@@ -487,7 +498,7 @@
 
 				<!-- Package 3 - Premium Plan -->
 				<div
-					class="box p-1 flex flex-col justify-between bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 border-b-4g border-red-500 ease-in-out hover:scale-105">
+					class="box p-1 flex flex-col justify-between bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 ease-in-out border-b-4g border-red-500 ease-in-out hover:scale-105">
 					<!-- Price Tag -->
 					<div class="price-tag py-4 text-xl bg-red-600 text-white rounded-tl-xl rounded-tr-xl font-bold">
 						₹1449/Month
@@ -514,7 +525,8 @@
 							</div>
 						</div>
 						<a href="#"
-							class="btn py-2 px-8 bg-red-600 text-white border border-transparent hover:border-gray-800 hover:text-gray-800 hover:bg-transparent transition-all duration-500 mt-4 rounded-full">
+							class="btn py-2 px-8 bg-red-600 text-white border border-transparent hover:border-gray-800 hover:text-gray-800 hover:bg-transparent transition-all duration-500 mt-4 rounded-full"
+							onclick="showPaymentPopup('1449')">
 							Join Now
 						</a>
 					</div>
@@ -524,6 +536,35 @@
 		</div>
 	</section>
 	<!-- End Price -->
+
+	<!-- Modal Popup for Payment -->
+	<div id="paymentModal"
+		class="modal hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
+		<div class="modal-content bg-white p-6 sm:p-8 rounded-xl max-w-full sm:max-w-md w-full text-center m-2">
+			<h3 class="text-2xl font-semibold mb-4">Payment Details</h3>
+
+			<!-- QR Code -->
+			<div class="qr-code mb-4">
+				<img src="images/qr-code-placeholder.jpg" alt="QR Code" class="w-48 h-48 mx-auto" />
+			</div>
+
+			<!-- UPI ID -->
+			<div class="upi-id mb-4">
+				<input type="text" id="upiId" value="example@upi"
+					class="border border-gray-300 p-2 rounded-md w-full text-center" readonly />
+			</div>
+
+			<!-- Copy Button -->
+			<button onclick="copyUPI()"
+				class="btn py-2 px-8 bg-red-600 text-white rounded-full hover:bg-transparent hover:text-gray-800 transition-all duration-500">
+				Copy UPI ID
+			</button>
+
+			<!-- Close Button -->
+			<button onclick="closePaymentPopup()" class="mt-4 text-red-600">Close</button>
+		</div>
+	</div>
+
 
 
 	<!-- Footer -->
@@ -540,7 +581,7 @@
 						Quick Links
 					</h3>
 					<ul class="space-y-4">
-						<li><a href="#"
+						<li><a href="https://github.com/mini-page" target="_blank"
 								class="block transition-all hover:text-white hover:underline hover:bg-blue-700 hover:rounded-full hover:px-10 hover:py-2">
 								About Us
 							</a></li>
@@ -548,32 +589,35 @@
 								class="block transition-all hover:text-white hover:underline hover:bg-blue-700 hover:rounded-full hover:px-10 hover:py-2">
 								Our Services
 							</a></li>
-						<li><a href="#"
+						<li>
+							<a href="tel:+9621272014"
 								class="block transition-all hover:text-white hover:underline hover:bg-blue-700 hover:rounded-full hover:px-10 hover:py-2">
 								Contact
-							</a></li>
+							</a>
+						</li>
+
 					</ul>
 				</div>
 				<div class="bg-white text-gray-900 rounded-2xl p-4">
 					<h3 class="text-xl font-bold mb-4">Connect With Us</h3>
 					<ul class="space-y-4">
 						<li>
-							<a href="#"
+							<a href="https://www.instagram.com/ug_5711" terget="_blank"
 								class="block transition-all hover:text-white hover:bg-pink-500 hover:rounded-full hover:px-10 hover:py-3">
 								<i class="fab fa-instagram mr-3"></i>
 								Instagram</a>
 						</li>
 						<li>
-							<a href="#"
+							<a href="https://www.youtube.com/@Sinner100" target="_blank"
 								class="block transition-all hover:text-white hover:bg-red-700 hover:rounded-full hover:px-10 hover:py-3">
 								<i class="fab fa-youtube mr-3"></i>
 								Youtube</a>
 						</li>
 						<li>
-							<a href="#"
-								class="block transition-all hover:text-white hover:bg-blue-700 hover:rounded-full hover:px-10 hover:py-3">
-								<i class="fab fa-facebook-f mr-3"></i>
-								Facebook</a>
+							<a href="https://t.me/raghav5711" target="_blank"
+								class="block transition-all hover:text-white hover:bg-blue-600 hover:rounded-full hover:px-10 hover:py-3">
+								<i class="fab fa-telegram mr-3"></i>
+								Telegram</a>
 						</li>
 					</ul>
 				</div>
@@ -666,6 +710,27 @@
 		// Optionally, you can use this if you want the first section to always open by default:
 		document.getElementById('acc1').setAttribute('open', true);
 
+		// Show Payment Popup
+		function showPaymentPopup(price) {
+			const paymentModal = document.getElementById('paymentModal');
+			paymentModal.classList.remove('hidden');
+			// Optionally, you can set the UPI ID and QR Code dynamically based on the plan
+		}
+
+		// Close Payment Popup
+		function closePaymentPopup() {
+			const paymentModal = document.getElementById('paymentModal');
+			paymentModal.classList.add('hidden');
+		}
+
+		// Copy UPI ID to Clipboard
+		function copyUPI() {
+			const upiIdField = document.getElementById('upiId');
+			upiIdField.select();
+			upiIdField.setSelectionRange(0, 99999); // For mobile devices
+			document.execCommand('copy');
+			alert('UPI ID copied to clipboard!');
+		}
 	</script>
 </body>
 
