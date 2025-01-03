@@ -454,13 +454,13 @@
 						</div>
 						<a href="#"
 							class="btn py-2 px-8 bg-red-600 text-white border border-transparent hover:border-gray-800 hover:text-gray-800 hover:bg-transparent transition-all duration-500 mt-6 rounded-full"
-							onclick="showPaymentPopup('449')">
+							onclick="showPaymentPopup(event, '449', 'Basic Training Plan', 'images/price-ham.jpg', 'example@upi')">
 							Join Now
 						</a>
 					</div>
 				</div>
 
-				<!-- Package 2 - Popular Plan with Border -->
+				<!-- Package 2 - Popular Plan -->
 				<div
 					class="box p-1 flex flex-col justify-between bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 ease-in-out hover:scale-105">
 					<!-- Price Tag -->
@@ -490,7 +490,7 @@
 						</div>
 						<a href="#"
 							class="btn py-2 px-8 bg-red-600 text-white border border-transparent hover:border-gray-800 hover:text-gray-800 hover:bg-transparent transition-all duration-500 mt-4 rounded-full"
-							onclick="showPaymentPopup('949')">
+							onclick="showPaymentPopup(event, '949', 'Popular Body Building Plan', 'images/price-belt.jpg', 'example@upi')">
 							Join Now
 						</a>
 					</div>
@@ -498,7 +498,7 @@
 
 				<!-- Package 3 - Premium Plan -->
 				<div
-					class="box p-1 flex flex-col justify-between bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 ease-in-out border-b-4g border-red-500 ease-in-out hover:scale-105">
+					class="box p-1 flex flex-col justify-between bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 ease-in-out hover:scale-105">
 					<!-- Price Tag -->
 					<div class="price-tag py-4 text-xl bg-red-600 text-white rounded-tl-xl rounded-tr-xl font-bold">
 						₹1449/Month
@@ -526,7 +526,7 @@
 						</div>
 						<a href="#"
 							class="btn py-2 px-8 bg-red-600 text-white border border-transparent hover:border-gray-800 hover:text-gray-800 hover:bg-transparent transition-all duration-500 mt-4 rounded-full"
-							onclick="showPaymentPopup('1449')">
+							onclick="showPaymentPopup(event, '1449', 'Premium Body Building Plan', 'images/price-up.jpg', 'example@upi')">
 							Join Now
 						</a>
 					</div>
@@ -541,30 +541,34 @@
 	<div id="paymentModal"
 		class="modal hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center z-50">
 		<div class="modal-content bg-white p-6 sm:p-8 rounded-xl max-w-full sm:max-w-md w-full text-center m-2">
-			<h3 class="text-2xl font-semibold mb-4">Payment Details</h3>
+			<h3 class="text-2xl font-semibold mb-6 text-gray-800">Payment Details</h3>
 
 			<!-- QR Code -->
-			<div class="qr-code mb-4">
-				<img src="images/qr-code-placeholder.jpg" alt="QR Code" class="w-48 h-48 mx-auto" />
+			<div class="qr-code mb-6">
+				<img id="qrCode" src="images/qr-code.jpg" alt="QR Code"
+					class="w-48 h-64 mx-auto rounded-xl shadow-lg transform transition duration-300 hover:scale-105" />
 			</div>
 
 			<!-- UPI ID -->
-			<div class="upi-id mb-4">
-				<input type="text" id="upiId" value="example@upi"
-					class="border border-gray-300 p-2 rounded-md w-full text-center" readonly />
+			<div class="upi-id mb-6">
+				<input type="text" id="upiId" value="angelmylife22-2@oksbi"
+					class="border-2 border-gray-300 p-3 rounded-lg w-full text-center bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+					readonly />
 			</div>
 
 			<!-- Copy Button -->
 			<button onclick="copyUPI()"
-				class="btn py-2 px-8 bg-red-600 text-white rounded-full hover:bg-transparent hover:text-gray-800 transition-all duration-500">
+				class="btn py-3 px-10 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-full shadow-lg hover:scale-105 transition-all duration-300 hover:from-red-600 hover:to-red-500">
 				Copy UPI ID
 			</button>
 
 			<!-- Close Button -->
-			<button onclick="closePaymentPopup()" class="mt-4 text-red-600">Close</button>
+			<button onclick="closePaymentPopup()"
+				class="mt-6 ml-2 text-red-600 text-2xl bg-red-100 hover:bg-red-200 rounded-full px-4 py-2 shadow-md transform transition-all duration-300">
+				<i class="fas fa-multiply"></i>
+			</button>
 		</div>
 	</div>
-
 
 
 	<!-- Footer -->
@@ -582,7 +586,7 @@
 					</h3>
 					<ul class="space-y-4">
 						<li><a href="https://github.com/mini-page" target="_blank"
-								class="block transition-all hover:text-white hover:underline hover:bg-blue-700 hover:rounded-full hover:px-10 hover:py-2">
+								class="block transition-all hover:text-white hover:underline hover:bg-blue-700 hover:rounded-full hover:px-8 hover:py-2">
 								About Us
 							</a></li>
 						<li><a href="#"
@@ -602,7 +606,7 @@
 					<h3 class="text-xl font-bold mb-4">Connect With Us</h3>
 					<ul class="space-y-4">
 						<li>
-							<a href="https://www.instagram.com/ug_5711" terget="_blank"
+							<a href="https://www.instagram.com/ug_5711" target="_blank"
 								class="block transition-all hover:text-white hover:bg-pink-500 hover:rounded-full hover:px-10 hover:py-3">
 								<i class="fab fa-instagram mr-3"></i>
 								Instagram</a>
@@ -711,10 +715,15 @@
 		document.getElementById('acc1').setAttribute('open', true);
 
 		// Show Payment Popup
-		function showPaymentPopup(price) {
+		function showPaymentPopup(event, price, planName, imgUrl, upiId) {
+			event.preventDefault(); // Prevent default anchor behavior (scrolling to top or changing URL)
+
 			const paymentModal = document.getElementById('paymentModal');
 			paymentModal.classList.remove('hidden');
-			// Optionally, you can set the UPI ID and QR Code dynamically based on the plan
+
+			// // Set modal content dynamically
+			// document.getElementById('qrCode').src = imgUrl; // Update the QR code image
+			// document.getElementById('upiId').value = upiId; // Update the UPI ID
 		}
 
 		// Close Payment Popup
